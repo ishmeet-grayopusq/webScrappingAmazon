@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "webscrappingamazon"
+version = "0.1.0"
+description = ""
+authors = ["ishmeet-grayopusq <120010191+ishmeet-grayopusq@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+beautifulsoup4 = "^4.11.2"
+fastapi = "^0.92.0"
+lxml = "^4.9.2"
+pandas = "^1.5.3"
+user-agents = "^2.2.0"
+fake-useragent = "^1.1.1"
+uvicorn = "^0.20.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

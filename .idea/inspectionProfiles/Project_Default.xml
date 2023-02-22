@@ -1,0 +1,33 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="13">
+            <item index="0" class="java.lang.String" itemvalue="pdfminer" />
+            <item index="1" class="java.lang.String" itemvalue="pdfminer.six" />
+            <item index="2" class="java.lang.String" itemvalue="traitlets" />
+            <item index="3" class="java.lang.String" itemvalue="jupyter-core" />
+            <item index="4" class="java.lang.String" itemvalue="nbclassic" />
+            <item index="5" class="java.lang.String" itemvalue="tornado" />
+            <item index="6" class="java.lang.String" itemvalue="pyzmq" />
+            <item index="7" class="java.lang.String" itemvalue="nest-asyncio" />
+            <item index="8" class="java.lang.String" itemvalue="nbformat" />
+            <item index="9" class="java.lang.String" itemvalue="jupyter-client" />
+            <item index="10" class="java.lang.String" itemvalue="jupyter-server" />
+            <item index="11" class="java.lang.String" itemvalue="nbconvert" />
+            <item index="12" class="java.lang.String" itemvalue="notebook" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="W605" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
