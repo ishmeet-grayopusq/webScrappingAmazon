@@ -281,7 +281,7 @@ async def process_historical_data(product_name, url):
     return json.loads(required_data.to_json(orient="records"))
 
 
-def process_all_urls():
+async def process_all_urls():
     output = list()
 
     # opening our url file to access URLs
@@ -291,7 +291,7 @@ def process_all_urls():
     # iterating over the urls
     for product_name, product_urls in json.loads(product_data).items():
         product_url = product_urls["amazon"]
-        output.append(single_product_data_fetcher(product_name, product_url))
+        output.append(await single_product_data_fetcher(product_name, product_url))
 
     return output
 

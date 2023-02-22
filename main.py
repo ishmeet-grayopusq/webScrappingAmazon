@@ -32,7 +32,7 @@ async def all_url_processor():
     """
     Returns info about current prices of all products.
     """
-    return process_all_urls()
+    return await process_all_urls()
 
 
 @app.post("/single_product")
