@@ -162,13 +162,16 @@ async def flipkart_processing(product_name, headers, url):
     print("original Price: ", product_price)
 
     # calculating the percentage discount:
-    discount = (
-        (int(product_price.replace("₹", "")) - int(discPrice.replace("₹", "")))
-        / int(product_price.replace("₹", ""))
-    ) * 100
-    discount = round(discount, 1)
-    discount = str(discount) + "%"
-    print("discount:", discount)
+    try:
+        discount = (
+            (int(product_price.replace("₹", "")) - int(discPrice.replace("₹", "")))
+            / int(product_price.replace("₹", ""))
+        ) * 100
+        discount = round(discount, 1)
+        discount = str(discount) + "%"
+        print("discount:", discount)
+    except:
+        discount = "NA"
 
     # the average ratings(stars)
     try:
@@ -286,12 +289,12 @@ async def process_all_urls():
 
     # opening our url file to access URLs
     with open("Data/available_products.json", "r") as file_obj:
-        product_data = file_obj.read()
+        product_data = json.loads(file_obj.read())
 
     # iterating over the urls
-    for product_name, product_urls in json.loads(product_data).items():
-        product_url = product_urls["amazon"]
-        output.append(await single_product_data_fetcher(product_name, product_url))
+    for product_name, product_urls in product_data.items():
+        current_product_data = await single_product_data_fetcher(product_name, product_urls)
+        output.append(current_product_data)
 
     return output
 

@@ -1,7 +1,7 @@
 import os
 import json
 import uvicorn
-from fastapi import FastAPI, Request, Body
+from fastapi import FastAPI, Body
 from models import ProductInfo
 from product_data_handler import (
     process_all_urls,
