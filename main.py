@@ -50,35 +50,27 @@ async def all_url_processor():
     return await process_all_urls()
 
 
-@app.get("/single_product")
-async def single_product_processor(
-    requested_product: ProductInfo = Body(example={"Product_Name": "Vega Atom Helmet"}),
-):
+@app.get("/single_product/{product_name}")
+async def single_product_processor(product_name: str):
     """
     Extracts and returns info about 1 product from Amazon and Flipkart.
     """
     with open("Data/available_products.json", "r") as file_obj:
         product_data = json.loads(file_obj.read())
     return await single_product_data_fetcher(
-        requested_product.Product_Name, product_data[requested_product.Product_Name]
+        product_name, product_data[product_name]
     )
 
 
-@app.get("/historical_data")
-async def historical_data_generator(
-    requested_product: ProductInfo = Body(
-        example={
-            "Product_Name": "Vega Atom Helmet",
-        }
-    ),
-):
+@app.get("/historical_data/{product_name}")
+async def historical_data_generator(product_name: str):
     """
     Generates historical data for 1 product from Amazon and Flipkart.
     """
     with open("Data/available_products.json", "r") as file_obj:
         product_data = json.loads(file_obj.read())
     return await process_historical_data(
-        requested_product.Product_Name, product_data[requested_product.Product_Name]
+        product_name, product_data[product_name]
     )
 
 
