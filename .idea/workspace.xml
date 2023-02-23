@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3dde044-299c-405e-b5cf-ff000b77c12a" name="Changes" comment="Fixed CORS Issue">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/HistoricalData.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Data/HistoricalData.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product_data_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/product_data_handler.py" afterDir="false" />
+    <list default="true" id="c3dde044-299c-405e-b5cf-ff000b77c12a" name="Changes" comment="COlumns name change">
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677135051919</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="COlumns name change">
+      <created>1677135893149</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1677135893149</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -211,6 +216,7 @@
     <MESSAGE value="Historical data processing completed" />
     <MESSAGE value="Fixed all products processing" />
     <MESSAGE value="Fixed CORS Issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed CORS Issue" />
+    <MESSAGE value="COlumns name change" />
+    <option name="LAST_COMMIT_MESSAGE" value="COlumns name change" />
   </component>
 </project>

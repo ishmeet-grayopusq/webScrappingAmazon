@@ -50,7 +50,7 @@ async def all_url_processor():
     return await process_all_urls()
 
 
-@app.post("/single_product")
+@app.get("/single_product")
 async def single_product_processor(
     requested_product: ProductInfo = Body(example={"Product_Name": "Vega Atom Helmet"}),
 ):
@@ -64,7 +64,7 @@ async def single_product_processor(
     )
 
 
-@app.post("/historical_data")
+@app.get("/historical_data")
 async def historical_data_generator(
     requested_product: ProductInfo = Body(
         example={
