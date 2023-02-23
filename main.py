@@ -1,8 +1,9 @@
 import os
 import json
 import uvicorn
-from fastapi import FastAPI, Body
+from fastapi import FastAPI, Body, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
+from starlette.middleware.base import BaseHTTPMiddleware
 from models import ProductInfo
 from product_data_handler import (
     process_all_urls,
@@ -12,13 +13,18 @@ from product_data_handler import (
 
 app = FastAPI()
 
-origins = ["*"]
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-)
+class CorsMiddlewareSelf(BaseHTTPMiddleware):
+    async def dispatch(self, request: Request, call_next):
+        response: Response = await call_next(request)
+        response.headers['Access-Control-Allow-Credentials'] = 'true'
+        response.headers['Access-Control-Allow-Origin'] = '*'
+        response.headers['Access-Control-Allow-Methods'] = '*'
+        response.headers['Access-Control-Allow-Headers'] = '*'
+        return response
+
+
+app.add_middleware(CorsMiddlewareSelf)
 
 
 @app.get("/")
