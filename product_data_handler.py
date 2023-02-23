@@ -300,5 +300,4 @@ async def process_all_urls():
 
 
 if __name__ == "__main__":
-    process_historical_data("Vega Atom Helmet", "https://www.amazon.in/dp/B07RFQRF46")
-    pprint(process_all_urls(), indent=4)
+    asyncio.run(process_historical_data("Vega Atom Helmet", "https://www.amazon.in/dp/B07RFQRF46"))

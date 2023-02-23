@@ -47,8 +47,74 @@ async def all_url_processor():
     """
     Returns info about current prices of all products.
     """
-    return await process_all_urls()
-
+    # return await process_all_urls()
+    return [
+  {
+    "Title": "Vega Atom Helmet",
+    "AmazonPrice": "₹848.00",
+    "FlipkartPrice": "₹890",
+    "AmazonDiscount": " 5%",
+    "FlipkartDiscount": "0.1%",
+    "AmazonRating": "4.1 out of 5 stars",
+    "FlipkartRating": "4.2 out of 5 stars",
+    "AmazonReviewCount": "11006 ratings",
+    "FlipkartReviewCount": "24,275 Ratings",
+    "Availability": "In stock",
+    "ExtractionDate": "2023-02-23"
+  },
+  {
+    "Title": "HP Backpack",
+    "AmazonPrice": "₹900.00",
+    "FlipkartPrice": "₹1,456",
+    "AmazonDiscount": " 55%",
+    "FlipkartDiscount": "NA",
+    "AmazonRating": "4.0 out of 5 stars",
+    "FlipkartRating": "NA",
+    "AmazonReviewCount": "531 ratings",
+    "FlipkartReviewCount": "NA",
+    "Availability": "In stock",
+    "ExtractionDate": "2023-02-23"
+  },
+  {
+    "Title": "MuscleBlaze Shaker Bottle",
+    "AmazonPrice": "₹249.00",
+    "FlipkartPrice": "₹499",
+    "AmazonDiscount": " 64%",
+    "FlipkartDiscount": "50.1%",
+    "AmazonRating": "3.8 out of 5 stars",
+    "FlipkartRating": "4.1 out of 5 stars",
+    "AmazonReviewCount": "4117 ratings",
+    "FlipkartReviewCount": "8,579 Ratings",
+    "Availability": "In stock",
+    "ExtractionDate": "2023-02-23"
+  },
+  {
+    "Title": "MuscleBlaze Protein",
+    "AmazonPrice": "₹2649.00",
+    "FlipkartPrice": "₹899",
+    "AmazonDiscount": " 23%",
+    "FlipkartDiscount": "42.0%",
+    "AmazonRating": "4.3 out of 5 stars",
+    "FlipkartRating": "4.2 out of 5 stars",
+    "AmazonReviewCount": "6697 ratings",
+    "FlipkartReviewCount": "96,444 Ratings",
+    "Availability": "In stock",
+    "ExtractionDate": "2023-02-23"
+  },
+  {
+    "Title": "BoAt Airdopes",
+    "AmazonPrice": "₹1499.00",
+    "FlipkartPrice": "₹2,990",
+    "AmazonDiscount": " 62%",
+    "FlipkartDiscount": "NA",
+    "AmazonRating": "3.9 out of 5 stars",
+    "FlipkartRating": "4 out of 5 stars",
+    "AmazonReviewCount": "146195 ratings",
+    "FlipkartReviewCount": "50,285 Ratings",
+    "Availability": "In stock",
+    "ExtractionDate": "2023-02-23"
+  }
+]
 
 @app.get("/single_product/{product_name}")
 async def single_product_processor(product_name: str):
