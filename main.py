@@ -2,6 +2,7 @@ import os
 import json
 import uvicorn
 from fastapi import FastAPI, Body
+from fastapi.middleware.cors import CORSMiddleware
 from models import ProductInfo
 from product_data_handler import (
     process_all_urls,
@@ -10,6 +11,16 @@ from product_data_handler import (
 )
 
 app = FastAPI()
+
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.get("/")
