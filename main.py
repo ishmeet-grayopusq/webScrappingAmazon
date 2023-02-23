@@ -2,9 +2,7 @@ import os
 import json
 import uvicorn
 from fastapi import FastAPI, Body, Request, Response
-from fastapi.middleware.cors import CORSMiddleware
 from starlette.middleware.base import BaseHTTPMiddleware
-from models import ProductInfo
 from product_data_handler import (
     process_all_urls,
     single_product_data_fetcher,
@@ -47,7 +45,7 @@ async def all_url_processor():
     """
     Returns info about current prices of all products.
     """
-    # return await process_all_urls()
+    await process_all_urls()
     return [
   {
     "Title": "Vega Atom Helmet",
