@@ -2,26 +2,61 @@ from fake_useragent import UserAgent
 from bs4 import BeautifulSoup
 from datetime import datetime
 import pandas as pd
+import scrapy
+from scrapyscript import Job, Processor
 import requests
 import json
+import re
 
 import logging
+
+# Disabling scrapy logs
+logging.getLogger('scrapy').propagate = False
+
+# Setting up generic logger
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
+
+processor = Processor(settings=None)
+
+
+class AmazonScrapper(scrapy.spiders.Spider):
+    name = "Amazon Scrapper"
+    custom_settings = {
+        'RETRY_TIMES': 100,
+    }
+
+    def __init__(self, url, product_name):
+        self.url = url
+        self.product_name = product_name
+
+    def start_requests(self):
+        yield scrapy.Request(self.url, headers={}, callback=self.parse)
+
+    def parse(self, response, **kwargs):
+        discount_val = response.css("span.savingsPercentage::text").get()
+        if not discount_val:
+            discount_matches = re.findall(r"(?<=\()\d+%(?=\))", response.text)
+            discount_val = discount_matches[0] if discount_matches else "NA"
+        return {
+            "Availability": "In-Stock" if len(response.xpath('//input[@id="buy-now-button"]')) > 0 else "Out-Of-Stock",
+            "Price": response.css("span.a-price-symbol::text").get() + response.css("span.a-price-whole::text").get(),
+            "ReviewCount": response.xpath('//span[@id="acrCustomerReviewText"]/text()').get(),
+            "Rating": response.css("span.reviewCountTextLinkedHistogram").attrib["title"],
+            "Discount": discount_val,
+            "ExtractionDate": str(datetime.now().date()),
+            "Title": self.product_name,
+        }
 
 
 async def amazon_processing(product_name, url):
     # Making the HTTP Request
     ua = UserAgent()
-    headers = {
-        "User-Agent": ua.random
-    }
+    headers = {"User-Agent": ua.random}
     webpage = requests.get(url, headers=headers)
 
     # Creating the Soup Object containing all the data
     soup = BeautifulSoup(webpage.content, "lxml")
-    logger.debug(str(soup))
-    print(soup)
 
     # retrieving product title
     try:
@@ -131,3 +166,14 @@ async def amazon_processing(product_name, url):
         processing_df["ExtractionDate"], errors="coerce"
     ).dt.strftime("%Y-%m-%d")
     return json.loads(processing_df.to_json(orient="records"))[0]
+
+
+if __name__ == "__main__":
+    job = Job(
+        AmazonScrapper,
+        url="https://www.amazon.in/Baidyanath-Wheat-Grass-Juice-500/dp/B07CYYC7VN/?_encoding=UTF8&pd_rd_w=ob0TL&content-id=amzn1.sym.81b56662-8040-4eea-838e-7893e7c07561&pf_rd_p=81b56662-8040-4eea-838e-7893e7c07561&pf_rd_r=XM3PGZ6Y1GVTMBP6BGKV&pd_rd_wg=WGD7t&pd_rd_r=8a194d70-1b79-42b4-935d-93c1e0318694&ref_=pd_gw_rp_a_ewe_0_wdg_120",
+        product_name="test"
+    )
+    import asyncio
+    results = asyncio.run(processor.run(job))
+    print(results)
