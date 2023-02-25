@@ -1,5 +1,5 @@
 from flipkart_processing import flipkart_processing
-from amazon_processing import amazon_processing
+from amazon_processing import amazon_processing, amazon_scrapy_processing
 from nykaa_processing import nykaa_processing
 from datetime import datetime
 import pandas as pd
@@ -9,7 +9,8 @@ import json
 
 async def single_product_data_fetcher(product_name: str, url: dict) -> dict:
     # to extract data from a script, we need to create a User-Agent as a has blocked robots from accessing data
-    amazon_coroutine = amazon_processing(product_name, url["amazon"])
+    # amazon_coroutine = amazon_processing(product_name, url["amazon"])
+    amazon_coroutine = amazon_scrapy_processing(product_name, url["amazon"])
     flipkart_coroutine = flipkart_processing(product_name, url["flipkart"])
     nykaa_coroutine = nykaa_processing(product_name, url["nykaa"])
     amazon_result, flipkart_result, nykaa_result = await asyncio.gather(
@@ -28,7 +29,7 @@ async def single_product_data_fetcher(product_name: str, url: dict) -> dict:
                 amazon_result["Rating"],
                 flipkart_result["Rating"],
                 nykaa_result["Rating"],
-                amazon_result["Review Count"],
+                amazon_result["ReviewCount"],
                 flipkart_result["Review Count"],
                 nykaa_result["Review Count"],
                 amazon_result["Availability"],

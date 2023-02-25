@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3dde044-299c-405e-b5cf-ff000b77c12a" name="Changes" comment="removed asyncio">
+    <list default="true" id="c3dde044-299c-405e-b5cf-ff000b77c12a" name="Changes" comment="Product_name setup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/amazon_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/amazon_processing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_data_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/product_data_handler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +55,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.amazon_processing">
+  <component name="RunManager" selected="Python.main">
     <configuration name="WebScrappingAmazon" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -141,8 +142,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.amazon_processing" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.amazon_processing" />
         <item itemvalue="Python.product_data_handler" />
         <item itemvalue="Python.WebScrappingAmazon" />
       </list>
@@ -325,7 +326,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677355607665</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Product_name setup">
+      <created>1677355938518</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1677355938518</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -354,16 +362,12 @@
     <MESSAGE value="adder logger" />
     <MESSAGE value="Added scrapy" />
     <MESSAGE value="removed asyncio" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed asyncio" />
+    <MESSAGE value="Product_name setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Product_name setup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/amazon_processing.py</url>
-          <line>24</line>
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/amazon_processing.py</url>
           <line>43</line>

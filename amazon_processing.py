@@ -12,7 +12,7 @@ import re
 import logging
 
 # Disabling scrapy logs
-# logging.getLogger('scrapy').propagate = False
+logging.getLogger('scrapy').propagate = False
 
 # Setting up generic logger
 logger = logging.getLogger(__name__)
@@ -62,7 +62,19 @@ async def amazon_scrapy_processing(product_name, url):
         url=url,
         product_name=product_name
     )
-    return processor.run(job)
+    result = processor.run(job)
+    if result:
+        return result[0]
+    else:
+        return {
+            "Availability": "",
+            "Price": "",
+            "ReviewCount": "",
+            "Rating": "",
+            "Discount": "",
+            "ExtractionDate": "",
+            "Title": ""
+        }
 
 
 async def amazon_processing(product_name, url):
