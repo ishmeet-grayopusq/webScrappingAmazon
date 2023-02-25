@@ -56,6 +56,15 @@ class AmazonScrapper(scrapy.spiders.Spider):
         }
 
 
+async def amazon_scrapy_processing(product_name, url):
+    job = Job(
+        AmazonScrapper,
+        url=url,
+        product_name=product_name
+    )
+    return processor.run(job)
+
+
 async def amazon_processing(product_name, url):
     # Making the HTTP Request
     ua = UserAgent()
@@ -176,10 +185,7 @@ async def amazon_processing(product_name, url):
 
 
 if __name__ == "__main__":
-    job = Job(
-        AmazonScrapper,
-        url="https://www.amazon.in/Baidyanath-Wheat-Grass-Juice-500/dp/B07CYYC7VN/?_encoding=UTF8&pd_rd_w=ob0TL&content-id=amzn1.sym.81b56662-8040-4eea-838e-7893e7c07561&pf_rd_p=81b56662-8040-4eea-838e-7893e7c07561&pf_rd_r=XM3PGZ6Y1GVTMBP6BGKV&pd_rd_wg=WGD7t&pd_rd_r=8a194d70-1b79-42b4-935d-93c1e0318694&ref_=pd_gw_rp_a_ewe_0_wdg_120",
-        product_name="test"
-    )
-    results = processor.run(job)
+    import asyncio
+    results = asyncio.run(amazon_scrapy_processing("MuscleBlaze Protein", "https://www.amazon.in/MuscleBlaze-Performance-Certified-Chocolate-servings/dp/B091HTLXL3"))
+
     print(results)
