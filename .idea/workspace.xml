@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3dde044-299c-405e-b5cf-ff000b77c12a" name="Changes" comment="Flipkart fix">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/amazon_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/amazon_processing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677345664065</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Flipkart fix">
+      <created>1677346072454</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1677346072454</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -272,14 +277,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/product_data_handler.py</url>
-          <line>93</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/product_data_handler.py</url>
-          <line>59</line>
-          <option name="timeStamp" value="32" />
+          <url>file://$PROJECT_DIR$/amazon_processing.py</url>
+          <line>14</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
