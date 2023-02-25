@@ -21,6 +21,7 @@ async def amazon_processing(product_name, url):
     # Creating the Soup Object containing all the data
     soup = BeautifulSoup(webpage.content, "lxml")
     logger.debug(str(soup))
+    print(soup)
 
     # retrieving product title
     try:

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3dde044-299c-405e-b5cf-ff000b77c12a" name="Changes" comment="amazon fix">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c3dde044-299c-405e-b5cf-ff000b77c12a" name="Changes" comment="adder logger">
       <change beforePath="$PROJECT_DIR$/amazon_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/amazon_processing.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -261,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677346354449</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="adder logger">
+      <created>1677346466834</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1677346466834</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -287,7 +293,8 @@
     <MESSAGE value="enabled all product response" />
     <MESSAGE value="Flipkart fix" />
     <MESSAGE value="amazon fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="amazon fix" />
+    <MESSAGE value="adder logger" />
+    <option name="LAST_COMMIT_MESSAGE" value="adder logger" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
