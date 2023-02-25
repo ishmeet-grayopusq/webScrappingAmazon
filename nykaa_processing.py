@@ -105,6 +105,7 @@ async def nykaa_processing(product_name, url):
                 star,
                 ratings_count,
                 stock_status,
+                product_id,
                 datetime.now().date(),
             ]
         ],
@@ -115,6 +116,7 @@ async def nykaa_processing(product_name, url):
             "Rating",
             "Review Count",
             "Availability",
+            "ProductID",
             "ExtractionDate",
         ],
     )

@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3dde044-299c-405e-b5cf-ff000b77c12a" name="Changes" comment="made amazon extraction smart" />
+    <list default="true" id="c3dde044-299c-405e-b5cf-ff000b77c12a" name="Changes" comment="Updated historical data">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/HistoricalData.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Data/HistoricalData.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/available_products.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/available_products.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amazon_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/amazon_processing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flipkart_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/flipkart_processing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nykaa_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/nykaa_processing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_data_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/product_data_handler.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -343,7 +351,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677356712831</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Updated historical data">
+      <created>1677357458402</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1677357458402</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -375,15 +390,26 @@
     <MESSAGE value="Product_name setup" />
     <MESSAGE value="Amazon change" />
     <MESSAGE value="made amazon extraction smart" />
-    <option name="LAST_COMMIT_MESSAGE" value="made amazon extraction smart" />
+    <MESSAGE value="Updated historical data" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated historical data" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/product_data_handler.py</url>
+          <line>18</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/flipkart_processing.py</url>
+          <line>108</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/amazon_processing.py</url>
           <line>43</line>
-          <option name="timeStamp" value="44" />
+          <option name="timeStamp" value="53" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

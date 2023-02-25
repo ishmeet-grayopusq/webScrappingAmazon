@@ -41,12 +41,21 @@ class AmazonScrapper(scrapy.spiders.Spider):
         yield scrapy.Request(self.url, headers={}, callback=self.parse)
 
     def parse(self, response, **kwargs):
+        product_id_data = re.findall("ASIN.+value.+", response.text)
+        if product_id_data:
+            product_id_values = re.findall('(?<=value=").+(?=">)', product_id_data[0])
+            if "value" not in product_id_values:
+                product_id = product_id_values[0]
+            else:
+                product_id = "NA"
+        else:
+            product_id = "NA"
         discount_val = response.css("span.savingsPercentage::text").get()
         if not discount_val:
             discount_matches = re.findall(r"(?<=\()\d+%(?=\))", response.text)
             discount_val = discount_matches[0] if discount_matches else "NA"
         return {
-            "Availability": "In-Stock"
+            "Availability": "In Stock"
             if len(response.xpath('//input[@id="buy-now-button"]')) > 0
             else "Out-Of-Stock",
             "Price": response.css("span.a-price-symbol::text").get()
@@ -60,6 +69,7 @@ class AmazonScrapper(scrapy.spiders.Spider):
             "Discount": discount_val,
             "ExtractionDate": str(datetime.now().date()),
             "Title": self.product_name,
+            "ProductID": product_id,
         }
 
 

@@ -1,12 +1,15 @@
+from urllib.parse import urlparse, parse_qs
 from bs4 import BeautifulSoup
+from datetime import datetime
 import pandas as pd
 import requests
-from datetime import datetime
 import json
 import re
 
 
 async def flipkart_processing(product_name, url):
+    url_query = urlparse(url).query
+    product_id = parse_qs(url_query)['pid'][0]
     page = requests.get(
         url,
         headers={
@@ -88,7 +91,8 @@ async def flipkart_processing(product_name, url):
                 stars,
                 product_rating,
                 stock,
-                datetime.now().date(),
+                product_id,
+                str(datetime.now().date()),
             ]
         ],
         columns=[
@@ -98,6 +102,7 @@ async def flipkart_processing(product_name, url):
             "Rating",
             "Review Count",
             "Availability",
+            "ProductID",
             "ExtractionDate",
         ],
     )
