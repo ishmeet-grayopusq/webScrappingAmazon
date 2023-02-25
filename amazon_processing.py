@@ -1,9 +1,10 @@
+from scrapyscript import Job, Processor
 from fake_useragent import UserAgent
 from bs4 import BeautifulSoup
 from datetime import datetime
+from urllib.parse import urlencode
 import pandas as pd
 import scrapy
-from scrapyscript import Job, Processor
 import requests
 import json
 import re
@@ -11,13 +12,19 @@ import re
 import logging
 
 # Disabling scrapy logs
-logging.getLogger('scrapy').propagate = False
+# logging.getLogger('scrapy').propagate = False
 
 # Setting up generic logger
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
 processor = Processor(settings=None)
+
+
+def get_scrapeops_url(url):
+    payload = {'api_key': "aefdfac4-496e-40d7-854b-f10eb619d906", 'url': url}
+    proxy_url = 'https://proxy.scrapeops.io/v1/?' + urlencode(payload)
+    return proxy_url
 
 
 class AmazonScrapper(scrapy.spiders.Spider):
@@ -27,7 +34,7 @@ class AmazonScrapper(scrapy.spiders.Spider):
     }
 
     def __init__(self, url, product_name):
-        self.url = url
+        self.url = get_scrapeops_url(url)
         self.product_name = product_name
 
     def start_requests(self):
