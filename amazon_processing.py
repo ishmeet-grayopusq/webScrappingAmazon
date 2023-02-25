@@ -12,7 +12,7 @@ import re
 import logging
 
 # Disabling scrapy logs
-logging.getLogger('scrapy').propagate = False
+logging.getLogger("scrapy").propagate = False
 
 # Setting up generic logger
 logger = logging.getLogger(__name__)
@@ -22,15 +22,15 @@ processor = Processor(settings=None)
 
 
 def get_scrapeops_url(url):
-    payload = {'api_key': "aefdfac4-496e-40d7-854b-f10eb619d906", 'url': url}
-    proxy_url = 'https://proxy.scrapeops.io/v1/?' + urlencode(payload)
+    payload = {"api_key": "aefdfac4-496e-40d7-854b-f10eb619d906", "url": url}
+    proxy_url = "https://proxy.scrapeops.io/v1/?" + urlencode(payload)
     return proxy_url
 
 
 class AmazonScrapper(scrapy.spiders.Spider):
     name = "Amazon Scrapper"
     custom_settings = {
-        'RETRY_TIMES': 100,
+        "RETRY_TIMES": 100,
     }
 
     def __init__(self, url, product_name):
@@ -46,10 +46,17 @@ class AmazonScrapper(scrapy.spiders.Spider):
             discount_matches = re.findall(r"(?<=\()\d+%(?=\))", response.text)
             discount_val = discount_matches[0] if discount_matches else "NA"
         return {
-            "Availability": "In-Stock" if len(response.xpath('//input[@id="buy-now-button"]')) > 0 else "Out-Of-Stock",
-            "Price": response.css("span.a-price-symbol::text").get() + response.css("span.a-price-whole::text").get(),
-            "ReviewCount": response.xpath('//span[@id="acrCustomerReviewText"]/text()').get(),
-            "Rating": response.css("span.reviewCountTextLinkedHistogram").attrib["title"],
+            "Availability": "In-Stock"
+            if len(response.xpath('//input[@id="buy-now-button"]')) > 0
+            else "Out-Of-Stock",
+            "Price": response.css("span.a-price-symbol::text").get()
+            + response.css("span.a-price-whole::text").get(),
+            "ReviewCount": response.xpath(
+                '//span[@id="acrCustomerReviewText"]/text()'
+            ).get(),
+            "Rating": response.css("span.reviewCountTextLinkedHistogram").attrib[
+                "title"
+            ],
             "Discount": discount_val,
             "ExtractionDate": str(datetime.now().date()),
             "Title": self.product_name,
@@ -57,11 +64,7 @@ class AmazonScrapper(scrapy.spiders.Spider):
 
 
 async def amazon_scrapy_processing(product_name, url):
-    job = Job(
-        AmazonScrapper,
-        url=url,
-        product_name=product_name
-    )
+    job = Job(AmazonScrapper, url=url, product_name=product_name)
     result = processor.run(job)
     if result:
         return result[0]
@@ -73,7 +76,7 @@ async def amazon_scrapy_processing(product_name, url):
             "Rating": "",
             "Discount": "",
             "ExtractionDate": "",
-            "Title": ""
+            "Title": "",
         }
 
 
@@ -198,6 +201,12 @@ async def amazon_processing(product_name, url):
 
 if __name__ == "__main__":
     import asyncio
-    results = asyncio.run(amazon_scrapy_processing("MuscleBlaze Protein", "https://www.amazon.in/MuscleBlaze-Performance-Certified-Chocolate-servings/dp/B091HTLXL3"))
+
+    results = asyncio.run(
+        amazon_scrapy_processing(
+            "MuscleBlaze Protein",
+            "https://www.amazon.in/MuscleBlaze-Performance-Certified-Chocolate-servings/dp/B091HTLXL3",
+        )
+    )
 
     print(results)

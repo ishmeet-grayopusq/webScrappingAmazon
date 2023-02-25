@@ -55,6 +55,8 @@ async def single_product_processor(product_name: str):
     """
     with open("Data/available_products.json", "r") as file_obj:
         product_data = json.loads(file_obj.read())
+    if product_name not in product_data:
+        return "Product not tracked currently. Please execute '/product_info' endpoint to see list of suppported product names."
     return await single_product_data_fetcher(product_name, product_data[product_name])
 
 
