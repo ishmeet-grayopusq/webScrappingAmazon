@@ -5,6 +5,10 @@ import pandas as pd
 import requests
 import json
 
+import logging
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+
 
 async def amazon_processing(product_name, url):
     # Making the HTTP Request
@@ -16,6 +20,7 @@ async def amazon_processing(product_name, url):
 
     # Creating the Soup Object containing all the data
     soup = BeautifulSoup(webpage.content, "lxml")
+    logger.debug(str(soup))
 
     # retrieving product title
     try:
