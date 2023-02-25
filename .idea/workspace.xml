@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3dde044-299c-405e-b5cf-ff000b77c12a" name="Changes" comment="Hard coded app response">
+    <list default="true" id="c3dde044-299c-405e-b5cf-ff000b77c12a" name="Changes" comment="enabled all product response">
+      <change afterPath="$PROJECT_DIR$/amazon_processing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flipkart_processing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nykaa_processing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/available_products.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/available_products.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_data_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/product_data_handler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +59,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.product_data_handler">
+  <component name="RunManager" selected="Python.main">
     <configuration name="WebScrappingAmazon" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -119,8 +125,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.product_data_handler" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.product_data_handler" />
         <item itemvalue="Python.WebScrappingAmazon" />
       </list>
     </recent_temporary>
@@ -218,7 +224,21 @@
       <option name="project" value="LOCAL" />
       <updated>1677146836660</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Hard coded app response">
+      <created>1677147479999</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1677147479999</updated>
+    </task>
+    <task id="LOCAL-00014" summary="enabled all product response">
+      <created>1677149125252</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1677149125252</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -241,27 +261,30 @@
     <MESSAGE value="Modified endpoint" />
     <MESSAGE value="Modified to params" />
     <MESSAGE value="Hard coded app response" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hard coded app response" />
+    <MESSAGE value="enabled all product response" />
+    <option name="LAST_COMMIT_MESSAGE" value="enabled all product response" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/product_data_handler.py</url>
-          <line>273</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>49</line>
-          <option name="timeStamp" value="17" />
+          <line>93</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/product_data_handler.py</url>
-          <line>296</line>
-          <option name="timeStamp" value="18" />
+          <line>59</line>
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
   </component>
 </project>
