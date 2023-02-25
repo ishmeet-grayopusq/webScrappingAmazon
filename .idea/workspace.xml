@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3dde044-299c-405e-b5cf-ff000b77c12a" name="Changes" comment="enabled all product response">
-      <change afterPath="$PROJECT_DIR$/amazon_processing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flipkart_processing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nykaa_processing.py" afterDir="false" />
+    <list default="true" id="c3dde044-299c-405e-b5cf-ff000b77c12a" name="Changes" comment="Flipkart fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/available_products.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/available_products.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amazon_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/amazon_processing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product_data_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/product_data_handler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677149125252</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Flipkart fix">
+      <created>1677345664065</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1677345664065</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -262,7 +265,8 @@
     <MESSAGE value="Modified to params" />
     <MESSAGE value="Hard coded app response" />
     <MESSAGE value="enabled all product response" />
-    <option name="LAST_COMMIT_MESSAGE" value="enabled all product response" />
+    <MESSAGE value="Flipkart fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Flipkart fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

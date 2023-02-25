@@ -1,14 +1,16 @@
+from fake_useragent import UserAgent
 from bs4 import BeautifulSoup
-import requests
 from datetime import datetime
 import pandas as pd
+import requests
 import json
 
 
 async def amazon_processing(product_name, url):
     # Making the HTTP Request
+    ua = UserAgent()
     headers = {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+        "User-Agent": ua.ie
     }
     webpage = requests.get(url, headers=headers)
 

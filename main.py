@@ -1,7 +1,7 @@
 import os
 import json
 import uvicorn
-from fastapi import FastAPI, Body, Request, Response
+from fastapi import FastAPI, Request, Response
 from starlette.middleware.base import BaseHTTPMiddleware
 from product_data_handler import (
     process_all_urls,
