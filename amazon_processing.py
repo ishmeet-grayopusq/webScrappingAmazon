@@ -10,7 +10,7 @@ async def amazon_processing(product_name, url):
     # Making the HTTP Request
     ua = UserAgent()
     headers = {
-        "User-Agent": ua.msie
+        "User-Agent": ua.opera
     }
     webpage = requests.get(url, headers=headers)
 
