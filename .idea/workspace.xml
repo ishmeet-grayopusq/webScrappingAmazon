@@ -4,10 +4,7 @@
     <list default="true" id="c3dde044-299c-405e-b5cf-ff000b77c12a" name="Changes" comment="Updated historical data">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/HistoricalData.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Data/HistoricalData.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/available_products.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data/available_products.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/amazon_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/amazon_processing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flipkart_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/flipkart_processing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nykaa_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/nykaa_processing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/product_data_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/product_data_handler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -398,18 +395,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/product_data_handler.py</url>
-          <line>18</line>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/flipkart_processing.py</url>
-          <line>108</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/amazon_processing.py</url>
-          <line>43</line>
-          <option name="timeStamp" value="53" />
+          <line>78</line>
+          <option name="timeStamp" value="54" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

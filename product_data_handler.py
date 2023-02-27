@@ -79,6 +79,11 @@ async def process_historical_data(product_name, url):
     product_historical_df = all_historical_data_df[
         all_historical_data_df["Title"] == product_name
     ]
+    product_historical_df["AmazonDiscount"] = [str(round(x*100))+"%" for x in product_historical_df["AmazonDiscount"]]
+    product_historical_df["FlipkartDiscount"] = [str(round(x * 100)) + "%" for x in
+                                                 product_historical_df["FlipkartDiscount"]]
+    product_historical_df["NykaaDiscount"] = [str(round(x * 100)) + "%" for x in
+                                              product_historical_df["NykaaDiscount"]]
     required_data = pd.concat([product_historical_df, product_data_df])
     required_data["ExtractionDate"] = pd.to_datetime(
         required_data["ExtractionDate"], errors="coerce"

@@ -66,7 +66,7 @@ class AmazonScrapper(scrapy.spiders.Spider):
             "Rating": response.css("span.reviewCountTextLinkedHistogram").attrib[
                 "title"
             ],
-            "Discount": discount_val,
+            "Discount": discount_val.replace("-", ""),
             "ExtractionDate": str(datetime.now().date()),
             "Title": self.product_name,
             "ProductID": product_id,
