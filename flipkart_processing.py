@@ -47,8 +47,8 @@ async def flipkart_processing(product_name, url):
     # calculating the percentage discount:
     try:
         discount = (
-            (int(product_price.replace("₹", "")) - int(discPrice.replace("₹", "")))
-            / int(product_price.replace("₹", ""))
+            (int(product_price.replace("₹", "").replace(",", "")) - int(discPrice.replace("₹", "").replace(",", "")))
+            / int(product_price.replace("₹", "").replace(",", ""))
         ) * 100
         discount = round(discount, 1)
         discount = str(discount) + "%"
