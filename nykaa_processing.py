@@ -96,6 +96,13 @@ async def nykaa_processing(product_name, url):
         print(e)
     print("Total Ratings:", ratings_count)
 
+    # size of the product
+    try:
+        prod_size = soup.findAll(attrs={"class": "css-pzbce3"})[0].text.replace("(", "").replace(")", "")
+    except AttributeError as e:
+        prod_size = "NA"
+    print("Product Size:", prod_size)
+
     processing_df = pd.DataFrame(
         [
             [
@@ -105,6 +112,7 @@ async def nykaa_processing(product_name, url):
                 star,
                 ratings_count,
                 stock_status,
+                prod_size,
                 product_id,
                 datetime.now().date(),
             ]
@@ -116,6 +124,7 @@ async def nykaa_processing(product_name, url):
             "Rating",
             "Review Count",
             "Availability",
+            "ProductSize",
             "ProductID",
             "ExtractionDate",
         ],

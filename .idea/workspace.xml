@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c3dde044-299c-405e-b5cf-ff000b77c12a" name="Changes" comment="Addressed changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/HistoricalData.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Data/HistoricalData.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amazon_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/amazon_processing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flipkart_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/flipkart_processing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nykaa_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/nykaa_processing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_data_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/product_data_handler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,18 +42,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;TF_FMT&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/mnt/607a6c41-0d78-4c5f-862b-fd9ed252c320/Work/Freelancing/Grayopus/webScrappingAmazon&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TF_FMT": "false",
+    "last_opened_file_path": "/mnt/607a6c41-0d78-4c5f-862b-fd9ed252c320/Work/Freelancing/Grayopus/webScrappingAmazon/Data",
+    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Data" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -367,7 +374,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677488383126</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Addressed changes">
+      <created>1677489545331</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1677489545331</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -408,7 +422,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/product_data_handler.py</url>
-          <line>78</line>
+          <line>84</line>
           <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

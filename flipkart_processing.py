@@ -82,15 +82,27 @@ async def flipkart_processing(product_name, url):
         stock = "NA"
         print(stock)
 
+    # flipkart size code:
+    try:
+        size_text = list(re.findall('([0-9]+).*(kg|\s*x*[**])', soup.find("div", class_="_2NKhZn").text))
+        size = " "
+        for i in size_text:
+            for y in i:
+                size += str(y)
+    except AttributeError:
+        size = "NA"
+    print("size:", size)
+
     processing_df = pd.DataFrame(
         [
             [
                 product_name,
-                product_price,
+                discPrice,
                 discount,
                 stars,
                 product_rating,
                 stock,
+                size,
                 product_id,
                 str(datetime.now().date()),
             ]
@@ -102,6 +114,7 @@ async def flipkart_processing(product_name, url):
             "Rating",
             "Review Count",
             "Availability",
+            "ProductSize",
             "ProductID",
             "ExtractionDate",
         ],

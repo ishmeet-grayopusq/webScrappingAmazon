@@ -38,6 +38,9 @@ async def single_product_data_fetcher(product_name: str, url: dict) -> dict:
                 amazon_result["ProductID"],
                 flipkart_result["ProductID"],
                 nykaa_result["ProductID"],
+                amazon_result["ProductSize"],
+                flipkart_result["ProductSize"],
+                nykaa_result["ProductSize"],
                 datetime.now().date(),
             ]
         ],
@@ -61,6 +64,9 @@ async def single_product_data_fetcher(product_name: str, url: dict) -> dict:
             "AmazonProductID",
             "FlipkartProductID",
             "NykaaProductID",
+            "AmazonProductSize",
+            "FlipkartProductSize",
+            "NykaaProductSize",
             "ExtractionDate",
         ],
     )
