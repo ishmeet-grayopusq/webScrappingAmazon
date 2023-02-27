@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3dde044-299c-405e-b5cf-ff000b77c12a" name="Changes" comment="Addressed changes" />
+    <list default="true" id="c3dde044-299c-405e-b5cf-ff000b77c12a" name="Changes" comment="Updated historical data">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -381,7 +383,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677493782024</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Updated historical data">
+      <created>1677494120227</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1677494120227</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -413,9 +422,9 @@
     <MESSAGE value="Product_name setup" />
     <MESSAGE value="Amazon change" />
     <MESSAGE value="made amazon extraction smart" />
-    <MESSAGE value="Updated historical data" />
     <MESSAGE value="Addressed changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Addressed changes" />
+    <MESSAGE value="Updated historical data" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated historical data" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -429,6 +438,11 @@
           <url>file://$PROJECT_DIR$/flipkart_processing.py</url>
           <line>10</line>
           <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/flipkart_processing.py</url>
+          <line>23</line>
+          <option name="timeStamp" value="59" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
