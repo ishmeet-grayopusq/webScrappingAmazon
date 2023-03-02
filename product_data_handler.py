@@ -77,10 +77,24 @@ async def single_product_data_fetcher(product_name: str, url: dict) -> dict:
 
 
 async def process_historical_data(product_name, url):
-    product_data = await single_product_data_fetcher(product_name, url)
-    product_data_df = pd.DataFrame(
-        [product_data.values()], columns=list(product_data.keys())
-    )
+    # product_data = await single_product_data_fetcher(product_name, url)
+    # product_data_df = pd.DataFrame(
+    #     [product_data.values()], columns=list(product_data.keys())
+    # )
+    # all_historical_data_df = pd.read_excel("Data/HistoricalData.xlsx")
+    # product_historical_df = all_historical_data_df[
+    #     all_historical_data_df["Title"] == product_name
+    # ]
+    # product_historical_df["AmazonDiscount"] = [str(round(x*100))+"%" for x in product_historical_df["AmazonDiscount"]]
+    # product_historical_df["FlipkartDiscount"] = [str(round(x * 100)) + "%" for x in
+    #                                              product_historical_df["FlipkartDiscount"]]
+    # product_historical_df["NykaaDiscount"] = [str(round(x * 100)) + "%" for x in
+    #                                           product_historical_df["NykaaDiscount"]]
+    # required_data = pd.concat([product_historical_df, product_data_df])
+    # required_data["ExtractionDate"] = pd.to_datetime(
+    #     required_data["ExtractionDate"], errors="coerce"
+    # ).dt.strftime("%Y-%m-%d")
+    # return json.loads(required_data.to_json(orient="records"))
     all_historical_data_df = pd.read_excel("Data/HistoricalData.xlsx")
     product_historical_df = all_historical_data_df[
         all_historical_data_df["Title"] == product_name
@@ -90,11 +104,10 @@ async def process_historical_data(product_name, url):
                                                  product_historical_df["FlipkartDiscount"]]
     product_historical_df["NykaaDiscount"] = [str(round(x * 100)) + "%" for x in
                                               product_historical_df["NykaaDiscount"]]
-    required_data = pd.concat([product_historical_df, product_data_df])
-    required_data["ExtractionDate"] = pd.to_datetime(
-        required_data["ExtractionDate"], errors="coerce"
+    product_historical_df["ExtractionDate"] = pd.to_datetime(
+        product_historical_df["ExtractionDate"], errors="coerce"
     ).dt.strftime("%Y-%m-%d")
-    return json.loads(required_data.to_json(orient="records"))
+    return json.loads(product_historical_df.to_json(orient="records"))
 
 
 async def process_all_urls():
