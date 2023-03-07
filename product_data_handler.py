@@ -1,5 +1,5 @@
 from flipkart_processing import flipkart_processing
-from amazon_processing import amazon_processing, amazon_scrapy_processing
+from amazon_processing import amazon_scrapy_processing
 from nykaa_processing import nykaa_processing
 from datetime import datetime
 import pandas as pd
@@ -99,11 +99,15 @@ async def process_historical_data(product_name, url):
     product_historical_df = all_historical_data_df[
         all_historical_data_df["Title"] == product_name
     ]
-    product_historical_df["AmazonDiscount"] = [str(round(x*100))+"%" for x in product_historical_df["AmazonDiscount"]]
-    product_historical_df["FlipkartDiscount"] = [str(round(x * 100)) + "%" for x in
-                                                 product_historical_df["FlipkartDiscount"]]
-    product_historical_df["NykaaDiscount"] = [str(round(x * 100)) + "%" for x in
-                                              product_historical_df["NykaaDiscount"]]
+    product_historical_df["AmazonDiscount"] = [
+        str(round(x * 100)) + "%" for x in product_historical_df["AmazonDiscount"]
+    ]
+    product_historical_df["FlipkartDiscount"] = [
+        str(round(x * 100)) + "%" for x in product_historical_df["FlipkartDiscount"]
+    ]
+    product_historical_df["NykaaDiscount"] = [
+        str(round(x * 100)) + "%" for x in product_historical_df["NykaaDiscount"]
+    ]
     product_historical_df["ExtractionDate"] = pd.to_datetime(
         product_historical_df["ExtractionDate"], errors="coerce"
     ).dt.strftime("%Y-%m-%d")

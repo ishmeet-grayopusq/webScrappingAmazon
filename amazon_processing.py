@@ -70,7 +70,9 @@ class AmazonScrapper(scrapy.spiders.Spider):
             "ExtractionDate": str(datetime.now().date()),
             "Title": self.product_name,
             "ProductID": product_id,
-            "ProductSize": response.xpath('//tr[@class="a-spacing-small po-unit_count"]//span[@class="a-size-base po-break-word"]/text()').get(),
+            "ProductSize": response.xpath(
+                '//tr[@class="a-spacing-small po-unit_count"]//span[@class="a-size-base po-break-word"]/text()'
+            ).get(),
         }
 
 

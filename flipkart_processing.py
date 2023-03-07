@@ -9,7 +9,7 @@ import re
 
 async def flipkart_processing(product_name, url):
     url_query = urlparse(url).query
-    product_id = parse_qs(url_query)['pid'][0]
+    product_id = parse_qs(url_query)["pid"][0]
     page = requests.get(
         url,
         headers={
@@ -47,7 +47,10 @@ async def flipkart_processing(product_name, url):
     # calculating the percentage discount:
     try:
         discount = (
-            (int(product_price.replace("₹", "").replace(",", "")) - int(discPrice.replace("₹", "").replace(",", "")))
+            (
+                int(product_price.replace("₹", "").replace(",", ""))
+                - int(discPrice.replace("₹", "").replace(",", ""))
+            )
             / int(product_price.replace("₹", "").replace(",", ""))
         ) * 100
         discount = round(discount, 1)
@@ -84,7 +87,11 @@ async def flipkart_processing(product_name, url):
 
     # flipkart size code:
     try:
-        size_text = list(re.findall('([0-9]+).*(kg|\s*x*[**])', soup.find("div", class_="_2NKhZn").text))
+        size_text = list(
+            re.findall(
+                "([0-9]+).*(kg|\s*x*[**])", soup.find("div", class_="_2NKhZn").text
+            )
+        )
         size = " "
         for i in size_text:
             for y in i:

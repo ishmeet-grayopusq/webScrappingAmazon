@@ -98,7 +98,11 @@ async def nykaa_processing(product_name, url):
 
     # size of the product
     try:
-        prod_size = soup.findAll(attrs={"class": "css-pzbce3"})[0].text.replace("(", "").replace(")", "")
+        prod_size = (
+            soup.findAll(attrs={"class": "css-pzbce3"})[0]
+            .text.replace("(", "")
+            .replace(")", "")
+        )
     except AttributeError as e:
         prod_size = "NA"
     print("Product Size:", prod_size)
