@@ -19,6 +19,7 @@ fake-useragent = "^1.1.1"
 scrapyscript = "^1.1.5"
 python-multipart = "^0.0.6"
 openpyxl = "^3.1.1"
+black = "^23.1.0"
 
 
 [build-system]
